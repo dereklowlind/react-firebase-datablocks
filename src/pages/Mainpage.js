@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SingleCityExample from '../datablocks/generalData/SingleCityExample';
+import MultipleCitiesExample from '../datablocks/generalData/MultipleCitiesExample';
 import MyCityExample from '../datablocks/userSpecificData/MyCityExample';
 
 function Mainpage(props){
@@ -11,12 +12,14 @@ function Mainpage(props){
   if(props.isSignedIn){
     userSpecificDataBlocks = (
       <MyCityExample db={db} />
+      
     )
   }
     return(
       <div>
         <div>main page</div>
         <SingleCityExample db={db}/>
+        <MultipleCitiesExample db={db} />
         {userSpecificDataBlocks}
       </div> 
     )
