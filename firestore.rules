@@ -13,5 +13,8 @@ service cloud.firestore {
       allow create: if request.auth != null;
     }
 
+    match /messaging/{document=**} {
+      allow read, write: if true;
+    }
   }
 }
